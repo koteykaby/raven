@@ -12,7 +12,8 @@ filter "configurations:Release"
    defines { "NDEBUG" }
    optimize "On"
 
-project "raven_loader"
+-- Custom loader for the game
+project "ubiorbitapi_r2_loader"
    kind "SharedLib"   
    language "C++"
    cppdialect "C++20" 
@@ -20,8 +21,8 @@ project "raven_loader"
    objdir "obj/%{cfg.buildcfg}"
 
    includedirs { 
-      "utils",           -- Для файла ini.h
-      "raven_loader"     -- Для заголовков в папке raven_loader
+      "utils",
+      "raven_loader"
    }
 
    files { 
@@ -34,6 +35,34 @@ project "raven_loader"
 
    defines { 
       "ORBIT_EXPORT"  
+   }
+
+   filter "toolset:msc"
+      buildoptions { "/EHsc" }
+      disablewarnings { "4251", "4005" }
+
+-- raven_server (EXE)
+project "server"
+   kind "ConsoleApp"         -- .exe
+   language "C++"
+   cppdialect "C++20"
+   targetdir "bin/%{cfg.buildcfg}"
+   objdir "obj/%{cfg.buildcfg}/server"
+
+   includedirs {
+      "server"
+   }
+
+   files {
+      "server/proto/**.hpp",
+      "server/proto/**.cpp",
+      "server/quazal/**.cpp",
+      "server/quazal/**.hpp",
+	  "server/services/**.hpp",
+	  "server/services/**.cpp",
+      "server/**.h",
+      "server/**.hpp",
+      "server/**.cpp",
    }
 
    filter "toolset:msc"
