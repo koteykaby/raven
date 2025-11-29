@@ -1,0 +1,76 @@
+{
+  "name": "UbiAccount",
+  "properties": [],
+  "variables": [
+    {
+      "name": "m_ubiAccountId",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_username",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_password",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_status",
+      "type": "UbiAccountStatus",
+      "array": 1
+    },
+    {
+      "name": "m_email",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_dateOfBirth",
+      "type": "datetime",
+      "array": 1
+    },
+    {
+      "name": "m_gender",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_countryCode",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_optIn",
+      "type": "bool",
+      "array": 1
+    },
+    {
+      "name": "m_thirdPartyOptIn",
+      "type": "bool",
+      "array": 1
+    },
+    {
+      "name": "m_firstName",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_lastName",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_preferredLanguage",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_externalAccounts",
+      "type": "qvector<ExternalAccount>",
+      "array": 1
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "GameSession",
+  "properties": [],
+  "variables": [
+    {
+      "name": "m_typeID",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_attributes",
+      "type": "qlist<Property>",
+      "array": 1
+    }
+  ]
+}

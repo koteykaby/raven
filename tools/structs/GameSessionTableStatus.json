@@ -1,0 +1,26 @@
+{
+  "name": "GameSessionTableStatus",
+  "properties": [
+    {
+      "name": "concrete",
+      "namespace": "OnlineCore"
+    }
+  ],
+  "variables": [
+    {
+      "name": "m_tableName",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_engine",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_creationTime",
+      "type": "datetime",
+      "array": 1
+    }
+  ]
+}

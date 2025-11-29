@@ -1,0 +1,16 @@
+{
+  "name": "LocalizationArg",
+  "properties": [],
+  "variables": [
+    {
+      "name": "m_key",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_value",
+      "type": "string",
+      "array": 1
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "TrackingInformation",
+  "properties": [
+    {
+      "name": "concrete",
+      "namespace": "OnlineCore"
+    }
+  ],
+  "variables": [
+    {
+      "name": "ipn",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "userID",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "machineID",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "visitorID",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "utsVersion",
+      "type": "string",
+      "array": 1
+    }
+  ]
+}

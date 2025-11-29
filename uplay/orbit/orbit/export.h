@@ -1,0 +1,1 @@
+#define orbit_export __declspec(dllexport)

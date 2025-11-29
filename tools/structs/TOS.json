@@ -1,0 +1,21 @@
+{
+  "name": "TOS",
+  "properties": [],
+  "variables": [
+    {
+      "name": "m_localeCode",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_content",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_storingInfoQuestion",
+      "type": "string",
+      "array": 1
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "GameSessionSearchWithParticipantsResult",
+  "properties": [],
+  "variables": [
+    {
+      "name": "m_participantIDs",
+      "type": "qlist<uint32>",
+      "array": 1
+    }
+  ]
+}

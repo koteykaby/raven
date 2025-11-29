@@ -1,0 +1,16 @@
+{
+  "name": "GameSessionMessage",
+  "properties": [],
+  "variables": [
+    {
+      "name": "m_sessionKey",
+      "type": "GameSessionKey",
+      "array": 1
+    },
+    {
+      "name": "m_message",
+      "type": "string",
+      "array": 1
+    }
+  ]
+}

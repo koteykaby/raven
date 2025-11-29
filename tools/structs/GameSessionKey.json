@@ -1,0 +1,21 @@
+{
+  "name": "GameSessionKey",
+  "properties": [
+    {
+      "name": "exportable",
+      "namespace": "OnlineCore"
+    }
+  ],
+  "variables": [
+    {
+      "name": "m_typeID",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_sessionID",
+      "type": "uint32",
+      "array": 1
+    }
+  ]
+}

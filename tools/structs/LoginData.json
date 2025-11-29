@@ -1,0 +1,35 @@
+{
+  "name": "LoginData",
+  "properties": [
+    {
+      "name": "concrete",
+      "namespace": "OnlineCore"
+    },
+    {
+      "name": "auto_type_inheritable",
+      "namespace": "OnlineCore"
+    }
+  ],
+  "variables": [
+    {
+      "name": "m_principalType",
+      "type": "int8",
+      "array": 1
+    },
+    {
+      "name": "m_userName",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_context",
+      "type": "uint64",
+      "array": 1
+    },
+    {
+      "name": "m_similarConnection",
+      "type": "uint32",
+      "array": 1
+    }
+  ]
+}

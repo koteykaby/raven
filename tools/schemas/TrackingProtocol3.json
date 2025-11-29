@@ -1,0 +1,153 @@
+{
+  "protocol": "TrackingProtocol3",
+  "methods": [
+    {
+      "method": "SendTag",
+      "parameters": [
+        {
+          "name": "trackingID",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "tag",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "attributes",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "deltaTime",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 1
+    },
+    {
+      "method": "SendTagAndUpdateUserInfo",
+      "parameters": [
+        {
+          "name": "trackingID",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "tag",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "attributes",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "deltaTime",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "userID",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 2
+    },
+    {
+      "method": "SendUserInfo",
+      "parameters": [
+        {
+          "name": "deltaTime",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "trackingID",
+          "type": "uint32",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 3
+    },
+    {
+      "method": "GetConfiguration",
+      "parameters": [],
+      "return": [
+        {
+          "name": "tags",
+          "type": "std_list<string>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 4
+    },
+    {
+      "method": "SendTags",
+      "parameters": [
+        {
+          "name": "tagData",
+          "type": "std_list<TrackingTag>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 5
+    }
+  ],
+  "proto_id": 36
+}

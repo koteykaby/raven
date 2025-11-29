@@ -1,0 +1,21 @@
+{
+  "name": "LocalizedString",
+  "properties": [],
+  "variables": [
+    {
+      "name": "m_localizationContext",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_localizedStringName",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_translatedStrings",
+      "type": "qlist<TranslatedString>",
+      "array": 1
+    }
+  ]
+}

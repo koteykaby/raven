@@ -1,0 +1,65 @@
+{
+  "name": "UserMessage",
+  "properties": [
+    {
+      "name": "exportable",
+      "namespace": "OnlineCore"
+    },
+    {
+      "name": "auto_type_inheritable",
+      "namespace": "OnlineCore"
+    }
+  ],
+  "variables": [
+    {
+      "name": "m_uiID",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_idRecipient",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_uiRecipientType",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_uiParentID",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_pidSender",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_receptiontime",
+      "type": "datetime",
+      "array": 1
+    },
+    {
+      "name": "m_uiLifeTime",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_uiFlags",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_strSubject",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_strSender",
+      "type": "string",
+      "array": 1
+    }
+  ]
+}

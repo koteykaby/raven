@@ -1,0 +1,21 @@
+{
+  "name": "UbiAuthenticationLoginCustomData",
+  "properties": [],
+  "variables": [
+    {
+      "name": "m_userName",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_onlineKey",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_password",
+      "type": "string",
+      "array": 1
+    }
+  ]
+}

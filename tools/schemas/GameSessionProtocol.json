@@ -1,0 +1,652 @@
+{
+  "protocol": "GameSessionProtocol",
+  "methods": [
+    {
+      "method": "CreateSession",
+      "parameters": [
+        {
+          "name": "gameSession",
+          "type": "GameSession",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "gameSessionKey",
+          "type": "GameSessionKey",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 1
+    },
+    {
+      "method": "UpdateSession",
+      "parameters": [
+        {
+          "name": "gameSessionUpdate",
+          "type": "GameSessionUpdate",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 2
+    },
+    {
+      "method": "DeleteSession",
+      "parameters": [
+        {
+          "name": "gameSessionKey",
+          "type": "GameSessionKey",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 3
+    },
+    {
+      "method": "MigrateSession",
+      "parameters": [
+        {
+          "name": "gameSessionKey",
+          "type": "GameSessionKey",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "gameSessionKeyMigrated",
+          "type": "GameSessionKey",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 4
+    },
+    {
+      "method": "LeaveSession",
+      "parameters": [
+        {
+          "name": "gameSessionKey",
+          "type": "GameSessionKey",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 5
+    },
+    {
+      "method": "GetSession",
+      "parameters": [
+        {
+          "name": "gameSessionKey",
+          "type": "GameSessionKey",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "searchResult",
+          "type": "GameSessionSearchResult",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 6
+    },
+    {
+      "method": "SearchSessions",
+      "parameters": [
+        {
+          "name": "gameSessionQuery",
+          "type": "GameSessionQuery",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "searchResults",
+          "type": "qlist<GameSessionSearchResult>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 7
+    },
+    {
+      "method": "AddParticipants",
+      "parameters": [
+        {
+          "name": "gameSessionKey",
+          "type": "GameSessionKey",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "publicParticipantIDs",
+          "type": "qlist<uint32>",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "privateParticipantIDs",
+          "type": "qlist<uint32>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 8
+    },
+    {
+      "method": "RemoveParticipants",
+      "parameters": [
+        {
+          "name": "gameSessionKey",
+          "type": "GameSessionKey",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "participantIDs",
+          "type": "qlist<uint32>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 9
+    },
+    {
+      "method": "GetParticipantCount",
+      "parameters": [
+        {
+          "name": "gameSessionKey",
+          "type": "GameSessionKey",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "count",
+          "type": "uint32",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 10
+    },
+    {
+      "method": "GetParticipants",
+      "parameters": [
+        {
+          "name": "gameSessionKey",
+          "type": "GameSessionKey",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "resultRange",
+          "type": "ResultRange",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "participants",
+          "type": "qlist<GameSessionParticipant>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 11
+    },
+    {
+      "method": "SendInvitation",
+      "parameters": [
+        {
+          "name": "invitation",
+          "type": "GameSessionInvitation",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 12
+    },
+    {
+      "method": "GetInvitationReceivedCount",
+      "parameters": [
+        {
+          "name": "gameSessionTypeID",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "count",
+          "type": "uint32",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 13
+    },
+    {
+      "method": "GetInvitationsReceived",
+      "parameters": [
+        {
+          "name": "gameSessionTypeID",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "resultRange",
+          "type": "ResultRange",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "invitations",
+          "type": "qlist<GameSessionInvitationReceived>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 14
+    },
+    {
+      "method": "GetInvitationSentCount",
+      "parameters": [
+        {
+          "name": "gameSessionTypeID",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "count",
+          "type": "uint32",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 15
+    },
+    {
+      "method": "GetInvitationsSent",
+      "parameters": [
+        {
+          "name": "gameSessionTypeID",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "resultRange",
+          "type": "ResultRange",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "invitations",
+          "type": "qlist<GameSessionInvitationSent>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 16
+    },
+    {
+      "method": "AcceptInvitation",
+      "parameters": [
+        {
+          "name": "gameSessionInvitation",
+          "type": "GameSessionInvitationReceived",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 17
+    },
+    {
+      "method": "DeclineInvitation",
+      "parameters": [
+        {
+          "name": "gameSessionInvitation",
+          "type": "GameSessionInvitationReceived",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 18
+    },
+    {
+      "method": "CancelInvitation",
+      "parameters": [
+        {
+          "name": "gameSessionInvitation",
+          "type": "GameSessionInvitationSent",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 19
+    },
+    {
+      "method": "SendTextMessage",
+      "parameters": [
+        {
+          "name": "gameSessionMessage",
+          "type": "GameSessionMessage",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 20
+    },
+    {
+      "method": "RegisterURLs",
+      "parameters": [
+        {
+          "name": "stationURLs",
+          "type": "qlist<stationurl>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 21
+    },
+    {
+      "method": "JoinSession",
+      "parameters": [
+        {
+          "name": "gameSessionKey",
+          "type": "GameSessionKey",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 22
+    },
+    {
+      "method": "AbandonSession",
+      "parameters": [
+        {
+          "name": "gameSessionKey",
+          "type": "GameSessionKey",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 23
+    },
+    {
+      "method": "SearchSessionsWithParticipants",
+      "parameters": [
+        {
+          "name": "gameSessionTypeID",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "participantIDs",
+          "type": "qlist<uint32>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "searchResults",
+          "type": "qlist<GameSessionSearchWithParticipantsResult>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 24
+    },
+    {
+      "method": "GetSessions",
+      "parameters": [
+        {
+          "name": "gameSessionKeys",
+          "type": "qlist<GameSessionKey>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "searchResults",
+          "type": "qlist<GameSessionSearchResult>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 25
+    },
+    {
+      "method": "GetParticipantsURLs",
+      "parameters": [
+        {
+          "name": "gameSessionKey",
+          "type": "GameSessionKey",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "participantIDs",
+          "type": "qlist<uint32>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "participants",
+          "type": "qlist<GameSessionParticipant>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 26
+    }
+  ],
+  "proto_id": 42
+}

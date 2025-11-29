@@ -1,0 +1,293 @@
+{
+  "protocol": "TitleStorageAdminProtocol",
+  "methods": [
+    {
+      "method": "GetContentTypesDescription",
+      "parameters": [],
+      "return": [
+        {
+          "name": "contentDescriptions",
+          "type": "qlist<ContentTypeDescription>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "GetContentTypeDescription",
+      "parameters": [
+        {
+          "name": "contentType",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "extensionFields",
+          "type": "qlist<ContentTypeExtensionField>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "BrowseContents",
+      "parameters": [],
+      "return": [
+        {
+          "name": "contents",
+          "type": "qlist<AdminTitleContent>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "GetContentDetails",
+      "parameters": [
+        {
+          "name": "contentId",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "details",
+          "type": "any<Data,string>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "CreateContentAndGetUploadInformation",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "key",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "dateAvailable",
+          "type": "datetime",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "dateExpired",
+          "type": "datetime",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "flags",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "extendedFlags",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "contentType",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "extension",
+          "type": "any<Data,string>",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "mime",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "contentId",
+          "type": "uint32",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "uploadURL",
+          "type": "string",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "uploadMimeType",
+          "type": "string",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "uploadBody",
+          "type": "std_map<string,string>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "RemoveContent",
+      "parameters": [
+        {
+          "name": "contentId",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "UpdateContentMetaData",
+      "parameters": [
+        {
+          "name": "contentId",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "dateAvailable",
+          "type": "datetime",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "dateExpired",
+          "type": "datetime",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "flags",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "extendedFlags",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "extension",
+          "type": "any<Data,string>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "ContentInsertionCompleted",
+      "parameters": [
+        {
+          "name": "contentId",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "contentSize",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    }
+  ]
+}

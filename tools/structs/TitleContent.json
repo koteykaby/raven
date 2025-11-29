@@ -1,0 +1,54 @@
+{
+  "name": "TitleContent",
+  "properties": [
+    {
+      "name": "concrete",
+      "namespace": "OnlineCore"
+    },
+    {
+      "name": "auto_type_inheritable",
+      "namespace": "OnlineCore"
+    },
+    {
+      "name": "exportable",
+      "namespace": "OnlineCore"
+    }
+  ],
+  "variables": [
+    {
+      "name": "id",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "size",
+      "type": "int64",
+      "array": 1
+    },
+    {
+      "name": "contentType",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "flags",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "extendedFlags",
+      "type": "uint32",
+      "array": 1
+    }
+  ]
+}

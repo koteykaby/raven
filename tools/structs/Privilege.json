@@ -1,0 +1,16 @@
+{
+  "name": "Privilege",
+  "properties": [],
+  "variables": [
+    {
+      "name": "m_ID",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_description",
+      "type": "string",
+      "array": 1
+    }
+  ]
+}

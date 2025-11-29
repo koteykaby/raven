@@ -1,0 +1,14 @@
+{
+  "name": "Data",
+  "properties": [
+    {
+      "name": "exportable",
+      "namespace": "OnlineCore"
+    },
+    {
+      "name": "dataclass_methods",
+      "namespace": "ProtocolFoundation"
+    }
+  ],
+  "variables": []
+}

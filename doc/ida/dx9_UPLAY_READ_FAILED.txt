@@ -1,0 +1,182 @@
+.text:00756F40 ; =============== S U B R O U T I N E =======================================
+.text:00756F40
+.text:00756F40
+.text:00756F40 sub_756F40      proc near               ; CODE XREF: sub_75AD90+4A↓p
+.text:00756F40
+.text:00756F40 arg_0           = dword ptr  4
+.text:00756F40 arg_4           = dword ptr  8
+.text:00756F40 arg_8           = dword ptr  0Ch
+.text:00756F40
+.text:00756F40                 push    esi
+.text:00756F41                 push    edi
+.text:00756F42                 xor     edi, edi
+.text:00756F44                 mov     esi, ecx
+.text:00756F46                 cmp     dword_149F128, edi
+.text:00756F4C                 jnz     loc_756FFF
+.text:00756F52                 mov     ecx, [esp+8+arg_8]
+.text:00756F56                 push    ecx
+.text:00756F57                 lea     eax, [esi+4]
+.text:00756F5A                 push    35h ; '5'
+.text:00756F5C                 mov     byte ptr [esi+14h], 0
+.text:00756F60                 mov     [esi+18h], edi
+.text:00756F63                 mov     ecx, dword_146DD54
+.text:00756F69                 push    eax
+.text:00756F6A                 call    ds:__imp_?GetRequestUniqueId@OrbitClient@orbitclient@mg@@QAEIXZ ; mg::orbitclient::OrbitClient::GetRequestUniqueId(void)
+.text:00756F70                 mov     ecx, dword_146DD54
+.text:00756F76                 push    eax
+.text:00756F77                 call    ds:__imp_?GetSavegameReader@OrbitClient@orbitclient@mg@@QAEXIPAVIGetSavegameReaderListener@23@II@Z ; mg::orbitclient::OrbitClient::GetSavegameReader(uint,mg::orbitclient::IGetSavegameReaderListener *,uint,uint)
+.text:00756F7D                 mov     ecx, esi
+.text:00756F7F                 call    sub_756EA0
+.text:00756F84                 cmp     [esi+18h], edi
+.text:00756F87                 jz      short loc_756FF4
+.text:00756F89                 cmp     [esi+28h], edi
+.text:00756F8C                 jnz     short loc_756FF4
+.text:00756F8E                 push    ebx
+.text:00756F8F                 mov     ebx, [esp+0Ch+arg_4]
+.text:00756F93                 push    ebp
+.text:00756F94                 lea     ebp, [esi+8]
+.text:00756F97
+.text:00756F97 loc_756F97:                             ; CODE XREF: sub_756F40+90↓j
+.text:00756F97                 mov     edx, [esp+10h+arg_0]
+.text:00756F9B                 push    ebx
+.text:00756F9C                 push    edx
+.text:00756F9D                 push    edi
+.text:00756F9E                 mov     byte ptr [esi+14h], 0
+.text:00756FA2                 mov     ecx, dword_146DD54
+.text:00756FA8                 push    ebp
+.text:00756FA9                 call    ds:__imp_?GetRequestUniqueId@OrbitClient@orbitclient@mg@@QAEIXZ ; mg::orbitclient::OrbitClient::GetRequestUniqueId(void)
+.text:00756FAF                 mov     ecx, [esi+18h]
+.text:00756FB2                 push    eax
+.text:00756FB3                 call    ds:__imp_?Read@SavegameReader@orbitclient@mg@@QAEXIPAVISavegameReadListener@23@IPAXI@Z ; mg::orbitclient::SavegameReader::Read(uint,mg::orbitclient::ISavegameReadListener *,uint,void *,uint)
+.text:00756FB9                 mov     ecx, esi
+.text:00756FBB                 call    sub_756EA0
+.text:00756FC0                 cmp     dword_149F128, 0
+.text:00756FC7                 jnz     short loc_756FD2
+.text:00756FC9                 mov     eax, [esi+1Ch]
+.text:00756FCC                 add     edi, eax
+.text:00756FCE                 test    eax, eax
+.text:00756FD0                 ja      short loc_756F97
+.text:00756FD2
+.text:00756FD2 loc_756FD2:                             ; CODE XREF: sub_756F40+87↑j
+.text:00756FD2                 mov     ecx, [esi+18h]
+.text:00756FD5                 call    ds:__imp_?Close@SavegameReader@orbitclient@mg@@QAEXXZ ; mg::orbitclient::SavegameReader::Close(void)
+.text:00756FDB                 pop     ebp
+.text:00756FDC                 xor     eax, eax
+.text:00756FDE                 mov     dword ptr [esi+18h], 0
+.text:00756FE5                 cmp     dword_149F128, eax
+.text:00756FEB                 pop     ebx
+.text:00756FEC                 pop     edi
+.text:00756FED                 setz    al
+.text:00756FF0                 pop     esi
+.text:00756FF1                 retn    0Ch
+.text:00756FF4 ; ---------------------------------------------------------------------------
+.text:00756FF4
+.text:00756FF4 loc_756FF4:                             ; CODE XREF: sub_756F40+47↑j
+.text:00756FF4                                         ; sub_756F40+4C↑j
+.text:00756FF4                 push    offset OutputString ; ">>>>>>>>>> UPLAY READ FAILED\n"
+.text:00756FF9                 call    ds:__imp_OutputDebugStringA
+.text:00756FFF
+.text:00756FFF loc_756FFF:                             ; CODE XREF: sub_756F40+C↑j
+.text:00756FFF                 pop     edi
+.text:00757000                 xor     al, al
+.text:00757002                 pop     esi
+.text:00757003                 retn    0Ch
+.text:00757003 sub_756F40      endp
+.text:00757003
+.text:00757003 ; ---------------------------------------------------------------------------
+.text:00757006                 align 10h
+.text:00757010
+.text:00757010 ; =============== S U B R O U T I N E =======================================
+.text:00757010
+.text:00757010
+.text:00757010 sub_757010      proc near               ; CODE XREF: sub_75AB60+203↓p
+.text:00757010
+.text:00757010 arg_4           = dword ptr  8
+.text:00757010 arg_8           = dword ptr  0Ch
+.text:00757010
+.text:00757010                 push    esi
+.text:00757011                 push    edi
+.text:00757012                 xor     edi, edi
+.text:00757014                 mov     esi, ecx
+.text:00757016                 cmp     dword_149F128, edi
+.text:0075701C                 jnz     loc_7570E5
+.text:00757022                 mov     ecx, [esp+8+arg_8]
+.text:00757026                 push    1
+.text:00757028                 push    ecx
+.text:00757029                 lea     eax, [esi+0Ch]
+.text:0075702C                 push    35h ; '5'
+.text:0075702E                 mov     byte ptr [esi+14h], 0
+.text:00757032                 mov     [esi+20h], edi
+.text:00757035                 mov     ecx, dword_146DD54
+.text:0075703B                 push    eax
+.text:0075703C                 call    ds:__imp_?GetRequestUniqueId@OrbitClient@orbitclient@mg@@QAEIXZ ; mg::orbitclient::OrbitClient::GetRequestUniqueId(void)
+.text:00757042                 mov     ecx, dword_146DD54
+.text:00757048                 push    eax
+.text:00757049                 call    ds:__imp_?GetSavegameWriter@OrbitClient@orbitclient@mg@@QAEXIPAVIGetSavegameWriterListener@23@II_N@Z ; mg::orbitclient::OrbitClient::GetSavegameWriter(uint,mg::orbitclient::IGetSavegameWriterListener *,uint,uint,bool)
+.text:0075704F                 mov     ecx, esi
+.text:00757051                 call    sub_756EA0
+.text:00757056                 mov     ecx, [esi+20h]
+.text:00757059                 cmp     ecx, edi
+.text:0075705B                 jz      short loc_7570DA
+.text:0075705D                 cmp     [esi+2Ch], edi
+.text:00757060                 jnz     short loc_7570DA
+.text:00757062                 push    ebp
+.text:00757063                 push    offset off_11F1784
+.text:00757068                 call    ds:__imp_?SetName@SavegameWriter@orbitclient@mg@@QAE_NPAG@Z ; mg::orbitclient::SavegameWriter::SetName(ushort *)
+.text:0075706E                 mov     ebp, [esp+8+arg_8]
+.text:00757072                 cmp     ebp, edi
+.text:00757074                 jbe     short loc_7570C0
+.text:00757076                 push    ebx
+.text:00757077                 lea     ebx, [esi+10h]
+.text:0075707A                 lea     ebx, [ebx+0]
+.text:00757080
+.text:00757080 loc_757080:                             ; CODE XREF: sub_757010+AD↓j
+.text:00757080                 mov     eax, [esp+0Ch+arg_4]
+.text:00757084                 mov     edx, ebp
+.text:00757086                 sub     edx, edi
+.text:00757088                 push    edx
+.text:00757089                 lea     ecx, [edi+eax]
+.text:0075708C                 push    ecx
+.text:0075708D                 mov     byte ptr [esi+14h], 0
+.text:00757091                 mov     ecx, dword_146DD54
+.text:00757097                 push    ebx
+.text:00757098                 call    ds:__imp_?GetRequestUniqueId@OrbitClient@orbitclient@mg@@QAEIXZ ; mg::orbitclient::OrbitClient::GetRequestUniqueId(void)
+.text:0075709E                 mov     ecx, [esi+20h]
+.text:007570A1                 push    eax
+.text:007570A2                 call    ds:__imp_?Write@SavegameWriter@orbitclient@mg@@QAEXIPAVISavegameWriteListener@23@PAXI@Z ; mg::orbitclient::SavegameWriter::Write(uint,mg::orbitclient::ISavegameWriteListener *,void *,uint)
+.text:007570A8                 mov     ecx, esi
+.text:007570AA                 call    sub_756EA0
+.text:007570AF                 cmp     dword_149F128, 0
+.text:007570B6                 jnz     short loc_7570BF
+.text:007570B8                 add     edi, [esi+24h]
+.text:007570BB                 cmp     edi, ebp
+.text:007570BD                 jb      short loc_757080
+.text:007570BF
+.text:007570BF loc_7570BF:                             ; CODE XREF: sub_757010+A6↑j
+.text:007570BF                 pop     ebx
+.text:007570C0
+.text:007570C0 loc_7570C0:                             ; CODE XREF: sub_757010+64↑j
+.text:007570C0                 mov     ecx, [esi+20h]
+.text:007570C3                 push    1
+.text:007570C5                 call    ds:__imp_?Close@SavegameWriter@orbitclient@mg@@QAEX_N@Z ; mg::orbitclient::SavegameWriter::Close(bool)
+.text:007570CB                 pop     ebp
+.text:007570CC                 pop     edi
+.text:007570CD                 mov     dword ptr [esi+20h], 0
+.text:007570D4                 mov     al, 1
+.text:007570D6                 pop     esi
+.text:007570D7                 retn    0Ch
+.text:007570DA ; ---------------------------------------------------------------------------
+.text:007570DA
+.text:007570DA loc_7570DA:                             ; CODE XREF: sub_757010+4B↑j
+.text:007570DA                                         ; sub_757010+50↑j
+.text:007570DA                 push    offset aUplaySaveFaile ; ">>>>>>>>>> UPLAY SAVE FAILED\n"
+.text:007570DF                 call    ds:__imp_OutputDebugStringA
+.text:007570E5
+.text:007570E5 loc_7570E5:                             ; CODE XREF: sub_757010+C↑j
+.text:007570E5                 pop     edi
+.text:007570E6                 xor     al, al
+.text:007570E8                 pop     esi
+.text:007570E9                 retn    0Ch
+.text:007570E9 sub_757010      endp
+.text:007570E9
+.text:007570E9 ; ---------------------------------------------------------------------------

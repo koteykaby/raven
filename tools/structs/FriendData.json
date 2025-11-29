@@ -1,0 +1,31 @@
+{
+  "name": "FriendData",
+  "properties": [],
+  "variables": [
+    {
+      "name": "m_pid",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_strName",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_byRelationship",
+      "type": "byte",
+      "array": 1
+    },
+    {
+      "name": "m_uiDetails",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_strStatus",
+      "type": "string",
+      "array": 1
+    }
+  ]
+}

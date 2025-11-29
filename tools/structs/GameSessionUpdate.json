@@ -1,0 +1,16 @@
+{
+  "name": "GameSessionUpdate",
+  "properties": [],
+  "variables": [
+    {
+      "name": "m_sessionKey",
+      "type": "GameSessionKey",
+      "array": 1
+    },
+    {
+      "name": "m_attributes",
+      "type": "qlist<Property>",
+      "array": 1
+    }
+  ]
+}

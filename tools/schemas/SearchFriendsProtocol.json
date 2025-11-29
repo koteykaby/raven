@@ -1,0 +1,32 @@
+{
+  "protocol": "SearchFriendsProtocol",
+  "methods": [
+    {
+      "method": "SearchFriends",
+      "parameters": [
+        {
+          "name": "partOfName",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "foundList",
+          "type": "std_list<FoundFriend>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 1
+    }
+  ],
+  "proto_id": 86
+}

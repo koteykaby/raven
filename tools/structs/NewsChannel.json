@@ -1,0 +1,51 @@
+{
+  "name": "NewsChannel",
+  "properties": [],
+  "variables": [
+    {
+      "name": "m_ID",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_ownerPID",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_name",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_description",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_creationTime",
+      "type": "datetime",
+      "array": 1
+    },
+    {
+      "name": "m_expirationTime",
+      "type": "datetime",
+      "array": 1
+    },
+    {
+      "name": "m_type",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_locale",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_subscribable",
+      "type": "bool",
+      "array": 1
+    }
+  ]
+}

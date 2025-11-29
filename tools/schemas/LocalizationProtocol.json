@@ -1,0 +1,45 @@
+{
+  "protocol": "LocalizationProtocol",
+  "methods": [
+    {
+      "method": "GetLocaleCode",
+      "parameters": [],
+      "return": [
+        {
+          "name": "localCode",
+          "type": "string",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 1
+    },
+    {
+      "method": "SetLocaleCode",
+      "parameters": [
+        {
+          "name": "localCode",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 2
+    }
+  ],
+  "proto_id": 39
+}

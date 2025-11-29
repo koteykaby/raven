@@ -1,0 +1,28 @@
+// GAME VERSION 1.8
+
+// addresses
+.rdata:00D202E0 aOnlineconfigse_0 db 'onlineconfigservice.ubi.com',0
+.text:008AA460 ; int Hermes::outputLog(int logChannel, char *Format, ...)
+
+// imports
+00D03B24		mg::orbitclient::SavegameWriter::Close(bool)	ubiorbitapi_r2_loader
+00D03B28		mg::orbitclient::SavegameWriter::Write(uint,mg::orbitclient::ISavegameWriteListener *,void *,uint)	ubiorbitapi_r2_loader
+00D03B2C		mg::orbitclient::SavegameWriter::SetName(ushort *)	ubiorbitapi_r2_loader
+00D03B30		mg::orbitclient::OrbitClient::GetSavegameWriter(uint,mg::orbitclient::IGetSavegameWriterListener *,uint,uint,bool)	ubiorbitapi_r2_loader
+00D03B34		mg::orbitclient::SavegameReader::Close(void)	ubiorbitapi_r2_loader
+00D03B38		mg::orbitclient::SavegameReader::Read(uint,mg::orbitclient::ISavegameReadListener *,uint,void *,uint)	ubiorbitapi_r2_loader
+00D03B3C		mg::orbitclient::OrbitClient::GetSavegameReader(uint,mg::orbitclient::IGetSavegameReaderListener *,uint,uint)	ubiorbitapi_r2_loader
+00D03B40		mg::orbitclient::OrbitClient::OrbitClient(void)	ubiorbitapi_r2_loader
+00D03B44		mg::orbitclient::OrbitClient::GetLoginDetails(uint,mg::orbitclient::IGetLoginDetailsListener *)	ubiorbitapi_r2_loader
+00D03B48		mg::orbitclient::OrbitClient::Update(void)	ubiorbitapi_r2_loader
+00D03B4C		mg::orbitclient::OrbitClient::GetInstallationErrorNum(void)	ubiorbitapi_r2_loader
+00D03B50		mg::orbitclient::OrbitClient::GetRequestUniqueId(void)	ubiorbitapi_r2_loader
+00D03B54		mg::orbitclient::OrbitClient::GetInstallationErrorString(char const *)	ubiorbitapi_r2_loader
+00D03B58		mg::orbitclient::OrbitClient::StartLauncher(uint,uint,char const *,char const *)	ubiorbitapi_r2_loader
+
+00D03B60		UPLAY_FRIENDS_GetFriendList	uplay_r1_loader
+00D03B64		UPLAY_Init	uplay_r1_loader
+00D03B68		UPLAY_FRIENDS_Init	uplay_r1_loader
+00D03B6C		UPLAY_Update	uplay_r1_loader
+00D03B70		UPLAY_Quit	uplay_r1_loader
+00D03B74		UPLAY_GetNextEvent	uplay_r1_loader

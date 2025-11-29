@@ -1,0 +1,645 @@
+{
+  "protocol": "NewsProtocolAdmin",
+  "methods": [
+    {
+      "method": "CreateChannel",
+      "parameters": [
+        {
+          "name": "channel",
+          "type": "NewsChannel",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "newsChannelID",
+          "type": "uint32",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "DeleteChannel",
+      "parameters": [
+        {
+          "name": "newsChannelID",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "DeleteChannels",
+      "parameters": [
+        {
+          "name": "newsChannelIDs",
+          "type": "qlist<uint32>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "GetChannels",
+      "parameters": [
+        {
+          "name": "resultRange",
+          "type": "ResultRange",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "channels",
+          "type": "qlist<NewsChannel>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "GetChannelsByTypes",
+      "parameters": [
+        {
+          "name": "newsChannelTypes",
+          "type": "qlist<string>",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "resultRange",
+          "type": "ResultRange",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "channels",
+          "type": "qlist<NewsChannel>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "GetChannelsByIDs",
+      "parameters": [
+        {
+          "name": "newsChannelIDs",
+          "type": "qlist<uint32>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "channels",
+          "type": "qlist<NewsChannel>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "UpdateChannel",
+      "parameters": [
+        {
+          "name": "channel",
+          "type": "NewsChannel",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "GetNewsFeedLinks",
+      "parameters": [
+        {
+          "name": "newsChannelIDs",
+          "type": "qlist<uint32>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "newsFeedLinks",
+          "type": "qlist<NewsFeedLink>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "GetNumberOfNewsFeedLinks",
+      "parameters": [
+        {
+          "name": "newsChannelIDs",
+          "type": "qlist<uint32>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "numberOfNewsFeedLinks",
+          "type": "uint32",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "LinkNewsFeed",
+      "parameters": [
+        {
+          "name": "newsFeedLink",
+          "type": "NewsFeedLink",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "newsFeedLinkID",
+          "type": "uint32",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "UnlinkNewsFeeds",
+      "parameters": [
+        {
+          "name": "newsFeedLinkIDs",
+          "type": "qlist<uint32>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "DeleteNewsMessages",
+      "parameters": [
+        {
+          "name": "newsMessageIDs",
+          "type": "qlist<uint32>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "DeleteNewsMessagesByRecipient",
+      "parameters": [
+        {
+          "name": "recipient",
+          "type": "NewsRecipient",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "GetNewsHeaders",
+      "parameters": [
+        {
+          "name": "recipient",
+          "type": "NewsRecipient",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "range",
+          "type": "ResultRange",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "newsHeaders",
+          "type": "qlist<NewsHeader>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "GetNewsMessages",
+      "parameters": [
+        {
+          "name": "newsMessageIDs",
+          "type": "qlist<uint32>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "newsMessages",
+          "type": "qlist<NewsMessage>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "GetNumberOfNews",
+      "parameters": [
+        {
+          "name": "recipient",
+          "type": "NewsRecipient",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "numberOfNews",
+          "type": "uint32",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "PublishNews",
+      "parameters": [
+        {
+          "name": "newsMessage",
+          "type": "NewsMessage",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "modifiedNewsMessage",
+          "type": "NewsMessage",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "UpdateNewsFeedLink",
+      "parameters": [
+        {
+          "name": "newsFeedLink",
+          "type": "NewsFeedLink",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "SingleNewsFeedParsingJob",
+      "parameters": [],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "MultipleNewsFeedParsingJob",
+      "parameters": [],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "NewsMessageCleaningJob",
+      "parameters": [],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "NewsChannelCleaningJob",
+      "parameters": [],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "CreateRSSFeed",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "feedTemplateID",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "GetDateTimeDelta",
+      "parameters": [
+        {
+          "name": "dt1",
+          "type": "datetime",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "dt2",
+          "type": "datetime",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "delta",
+          "type": "int64",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "AddDateTime",
+      "parameters": [
+        {
+          "name": "dt1",
+          "type": "datetime",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "years",
+          "type": "int32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "months",
+          "type": "int32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "days",
+          "type": "int32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "hours",
+          "type": "int32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "minutes",
+          "type": "int32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "seconds",
+          "type": "int32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "dt2",
+          "type": "datetime",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "GetLocalDateTime",
+      "parameters": [],
+      "return": [
+        {
+          "name": "dt",
+          "type": "datetime",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "GetSystemDateTime",
+      "parameters": [],
+      "return": [
+        {
+          "name": "dt",
+          "type": "datetime",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "PublishNewsMessages",
+      "parameters": [
+        {
+          "name": "newsMessages",
+          "type": "qlist<NewsMessage>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    }
+  ]
+}

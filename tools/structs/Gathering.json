@@ -1,0 +1,69 @@
+{
+  "name": "Gathering",
+  "properties": [
+    {
+      "name": "gathering_methods",
+      "namespace": "MatchMakingService"
+    },
+    {
+      "name": "auto_type_inheritable",
+      "namespace": "OnlineCore"
+    },
+    {
+      "name": "exportable",
+      "namespace": "OnlineCore"
+    }
+  ],
+  "variables": [
+    {
+      "name": "m_idMyself",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_pidOwner",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_pidHost",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_uiMinParticipants",
+      "type": "uint16",
+      "array": 1
+    },
+    {
+      "name": "m_uiMaxParticipants",
+      "type": "uint16",
+      "array": 1
+    },
+    {
+      "name": "m_uiParticipationPolicy",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_uiPolicyArgument",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_uiFlags",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_uiState",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_strDescription",
+      "type": "string",
+      "array": 1
+    }
+  ]
+}

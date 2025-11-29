@@ -1,0 +1,11 @@
+{
+  "name": "DynamicData",
+  "properties": [],
+  "variables": [
+    {
+      "name": "m_bufTail",
+      "type": "buffertail",
+      "array": 1
+    }
+  ]
+}

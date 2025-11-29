@@ -1,0 +1,25 @@
+{
+  "name": "GatheringURLs",
+  "properties": [
+    {
+      "name": "concrete",
+      "namespace": "OnlineCore"
+    },
+    {
+      "name": "exportable",
+      "namespace": "OnlineCore"
+    }
+  ],
+  "variables": [
+    {
+      "name": "m_gid",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_lstStationURLs",
+      "type": "std_list<stationurl>",
+      "array": 1
+    }
+  ]
+}

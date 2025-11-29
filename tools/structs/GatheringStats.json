@@ -1,0 +1,26 @@
+{
+  "name": "GatheringStats",
+  "properties": [
+    {
+      "name": "concrete",
+      "namespace": "OnlineCore"
+    }
+  ],
+  "variables": [
+    {
+      "name": "m_pidParticipant",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_uiFlags",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_lstValues",
+      "type": "std_list<float>",
+      "array": 1
+    }
+  ]
+}

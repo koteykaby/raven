@@ -1,0 +1,26 @@
+{
+  "name": "UbiAccountStatus",
+  "properties": [],
+  "variables": [
+    {
+      "name": "m_basicStatus",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_missingRequiredInformations",
+      "type": "bool",
+      "array": 1
+    },
+    {
+      "name": "m_recoveringPassword",
+      "type": "bool",
+      "array": 1
+    },
+    {
+      "name": "m_pendingDeactivation",
+      "type": "bool",
+      "array": 1
+    }
+  ]
+}

@@ -1,0 +1,889 @@
+{
+  "protocol": "AccountManagementProtocol",
+  "methods": [
+    {
+      "method": "CreateAccount",
+      "parameters": [
+        {
+          "name": "strPrincipalName",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strKey",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "uiGroups",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strEmail",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 1
+    },
+    {
+      "method": "DeleteAccount",
+      "parameters": [
+        {
+          "name": "idPrincipal",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 2
+    },
+    {
+      "method": "DisableAccount",
+      "parameters": [
+        {
+          "name": "idPrincipal",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "dtUntil",
+          "type": "datetime",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strMessage",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 3
+    },
+    {
+      "method": "ChangePassword",
+      "parameters": [
+        {
+          "name": "strNewKey",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 4
+    },
+    {
+      "method": "TestCapability",
+      "parameters": [
+        {
+          "name": "uiCapability",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 5
+    },
+    {
+      "method": "GetName",
+      "parameters": [
+        {
+          "name": "idPrincipal",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "strName",
+          "type": "string",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 6
+    },
+    {
+      "method": "GetAccountData",
+      "parameters": [],
+      "return": [
+        {
+          "name": "oAccountData",
+          "type": "AccountData",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 7
+    },
+    {
+      "method": "GetPrivateData",
+      "parameters": [],
+      "return": [
+        {
+          "name": "oData",
+          "type": "any<Data,string>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 8
+    },
+    {
+      "method": "GetPublicData",
+      "parameters": [
+        {
+          "name": "idPrincipal",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "oData",
+          "type": "any<Data,string>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 9
+    },
+    {
+      "method": "GetMultiplePublicData",
+      "parameters": [
+        {
+          "name": "lstPrincipals",
+          "type": "std_list<uint32>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "oData",
+          "type": "std_list<any<Data,string>>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 10
+    },
+    {
+      "method": "UpdateAccountName",
+      "parameters": [
+        {
+          "name": "strName",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 11
+    },
+    {
+      "method": "UpdateAccountEmail",
+      "parameters": [
+        {
+          "name": "strName",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 12
+    },
+    {
+      "method": "UpdateCustomData",
+      "parameters": [
+        {
+          "name": "oPublicData",
+          "type": "any<Data,string>",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "oPrivateData",
+          "type": "any<Data,string>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 13
+    },
+    {
+      "method": "FindByNameRegex",
+      "parameters": [
+        {
+          "name": "uiGroups",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strRegex",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "resultRange",
+          "type": "ResultRange",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "plstAccounts",
+          "type": "std_list<BasicAccountInfo>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 14
+    },
+    {
+      "method": "UpdateAccountExpiryDate",
+      "parameters": [
+        {
+          "name": "idPrincipal",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "dtExpiry",
+          "type": "datetime",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strExpiredMessage",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 15
+    },
+    {
+      "method": "UpdateAccountEffectiveDate",
+      "parameters": [
+        {
+          "name": "idPrincipal",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "dtEffectiveFrom",
+          "type": "datetime",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strNotEffectiveMessage",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 16
+    },
+    {
+      "method": "UpdateStatus",
+      "parameters": [
+        {
+          "name": "strStatus",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 17
+    },
+    {
+      "method": "GetStatus",
+      "parameters": [
+        {
+          "name": "idPrincipal",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "strStatus",
+          "type": "string",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 18
+    },
+    {
+      "method": "GetLastConnectionStats",
+      "parameters": [
+        {
+          "name": "idPrincipal",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "dtLastSessionLogin",
+          "type": "datetime",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "dtLastSessionLogout",
+          "type": "datetime",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "dtCurrentSessionLogin",
+          "type": "datetime",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 19
+    },
+    {
+      "method": "ResetPassword",
+      "parameters": [],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 20
+    },
+    {
+      "method": "CreateAccountWithCustomData",
+      "parameters": [
+        {
+          "name": "strPrincipalName",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strKey",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "uiGroups",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strEmail",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "oPublicData",
+          "type": "any<Data,string>",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "oPrivateData",
+          "type": "any<Data,string>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 21
+    },
+    {
+      "method": "RetrieveAccount",
+      "parameters": [],
+      "return": [
+        {
+          "name": "oAccountData",
+          "type": "AccountData",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "oPublicData",
+          "type": "any<Data,string>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "oPrivateData",
+          "type": "any<Data,string>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 22
+    },
+    {
+      "method": "UpdateAccount",
+      "parameters": [
+        {
+          "name": "strKey",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strEmail",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "oPublicData",
+          "type": "any<Data,string>",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "oPrivateData",
+          "type": "any<Data,string>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 23
+    },
+    {
+      "method": "ChangePasswordByGuest",
+      "parameters": [
+        {
+          "name": "strPrincipalName",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strEmail",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strKey",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 24
+    },
+    {
+      "method": "FindByNameLike",
+      "parameters": [
+        {
+          "name": "uiGroups",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strLike",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "resultRange",
+          "type": "ResultRange",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "plstAccounts",
+          "type": "std_list<BasicAccountInfo>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 25
+    },
+    {
+      "method": "CustomCreateAccount",
+      "parameters": [
+        {
+          "name": "strPrincipalName",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strKey",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "uiGroups",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strEmail",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "oAuthData",
+          "type": "any<Data,string>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "pid",
+          "type": "uint32",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 26
+    },
+    {
+      "method": "LookupOrCreateAccount",
+      "parameters": [
+        {
+          "name": "strPrincipalName",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strKey",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "uiGroups",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strEmail",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "oAuthData",
+          "type": "any<Data,string>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "pid",
+          "type": "uint32",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 27
+    },
+    {
+      "method": "CreateAccountEx",
+      "parameters": [
+        {
+          "name": "principalType",
+          "type": "int8",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strPrincipalName",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strKey",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "uiGroups",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strEmail",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "context",
+          "type": "uint64",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 28
+    },
+    {
+      "method": "DisconnectPrincipal",
+      "parameters": [
+        {
+          "name": "idPrincipal",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 29
+    },
+    {
+      "method": "DisconnectAllPrincipals",
+      "parameters": [],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 30
+    }
+  ],
+  "proto_id": 25
+}

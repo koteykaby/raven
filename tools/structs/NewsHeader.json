@@ -1,0 +1,56 @@
+{
+  "name": "NewsHeader",
+  "properties": [],
+  "variables": [
+    {
+      "name": "m_ID",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_recipientID",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_recipientType",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_publisherPID",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_publisherName",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_publicationTime",
+      "type": "datetime",
+      "array": 1
+    },
+    {
+      "name": "m_displayTime",
+      "type": "datetime",
+      "array": 1
+    },
+    {
+      "name": "m_expirationTime",
+      "type": "datetime",
+      "array": 1
+    },
+    {
+      "name": "m_title",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_link",
+      "type": "string",
+      "array": 1
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "protocol": "HealthProtocol",
+  "methods": [
+    {
+      "method": "PingDaemon",
+      "parameters": [],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "PingDatabase",
+      "parameters": [],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "RunSanityCheck",
+      "parameters": [],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    },
+    {
+      "method": "FixSanityErrors",
+      "parameters": [],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ]
+    }
+  ]
+}

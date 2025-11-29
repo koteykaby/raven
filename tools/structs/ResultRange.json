@@ -1,0 +1,21 @@
+{
+  "name": "ResultRange",
+  "properties": [
+    {
+      "name": "exportable",
+      "namespace": "OnlineCore"
+    }
+  ],
+  "variables": [
+    {
+      "name": "m_uiOffset",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "m_uiSize",
+      "type": "uint32",
+      "array": 1
+    }
+  ]
+}

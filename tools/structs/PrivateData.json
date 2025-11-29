@@ -1,0 +1,14 @@
+{
+  "name": "PrivateData",
+  "properties": [
+    {
+      "name": "concrete",
+      "namespace": "OnlineCore"
+    },
+    {
+      "name": "auto_type_inheritable",
+      "namespace": "OnlineCore"
+    }
+  ],
+  "variables": []
+}

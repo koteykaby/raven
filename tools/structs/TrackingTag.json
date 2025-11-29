@@ -1,0 +1,31 @@
+{
+  "name": "TrackingTag",
+  "properties": [],
+  "variables": [
+    {
+      "name": "trackingID",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "tag",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "attributes",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "deltaTime",
+      "type": "uint32",
+      "array": 1
+    },
+    {
+      "name": "newUserId",
+      "type": "string",
+      "array": 1
+    }
+  ]
+}

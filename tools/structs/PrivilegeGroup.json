@@ -1,0 +1,16 @@
+{
+  "name": "PrivilegeGroup",
+  "properties": [],
+  "variables": [
+    {
+      "name": "m_description",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_privileges",
+      "type": "qlist<Privilege>",
+      "array": 1
+    }
+  ]
+}

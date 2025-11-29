@@ -1,0 +1,210 @@
+{
+  "protocol": "TicketGrantingProtocol",
+  "methods": [
+    {
+      "method": "Login",
+      "parameters": [
+        {
+          "name": "strUserName",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "pidPrincipal",
+          "type": "uint32",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "pbufResponse",
+          "type": "buffer",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "pConnectionData",
+          "type": "RVConnectionData",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "strReturnMsg",
+          "type": "string",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 1
+    },
+    {
+      "method": "LoginEx",
+      "parameters": [
+        {
+          "name": "strUserName",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "oExtraData",
+          "type": "any<Data,string>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "pidPrincipal",
+          "type": "uint32",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "pbufResponse",
+          "type": "buffer",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "pConnectionData",
+          "type": "RVConnectionData",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "strReturnMsg",
+          "type": "string",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 2
+    },
+    {
+      "method": "RequestTicket",
+      "parameters": [
+        {
+          "name": "idSource",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "idTarget",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "bufResponse",
+          "type": "buffer",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 3
+    },
+    {
+      "method": "GetPID",
+      "parameters": [
+        {
+          "name": "strUserName",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "uint32",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 4
+    },
+    {
+      "method": "GetName",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "string",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 5
+    },
+    {
+      "method": "LoginWithContext",
+      "parameters": [
+        {
+          "name": "loginData",
+          "type": "any<Data,string>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "pidPrincipal",
+          "type": "uint32",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "pbufResponse",
+          "type": "buffer",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "pConnectionData",
+          "type": "RVConnectionData",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 6
+    }
+  ],
+  "proto_id": 10
+}

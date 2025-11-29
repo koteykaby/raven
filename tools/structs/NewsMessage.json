@@ -1,0 +1,11 @@
+{
+  "name": "NewsMessage",
+  "properties": [],
+  "variables": [
+    {
+      "name": "m_body",
+      "type": "string",
+      "array": 1
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "ContentTypeExtensionField",
+  "properties": [
+    {
+      "name": "concrete",
+      "namespace": "OnlineCore"
+    }
+  ],
+  "variables": [
+    {
+      "name": "m_FieldName",
+      "type": "string",
+      "array": 1
+    },
+    {
+      "name": "m_FieldType",
+      "type": "string",
+      "array": 1
+    }
+  ]
+}

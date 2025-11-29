@@ -1,0 +1,1101 @@
+{
+  "protocol": "MatchMakingProtocol",
+  "methods": [
+    {
+      "method": "RegisterGathering",
+      "parameters": [
+        {
+          "name": "anyGathering",
+          "type": "any<Gathering,string>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "uint32",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 1
+    },
+    {
+      "method": "UnregisterGathering",
+      "parameters": [
+        {
+          "name": "idGathering",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 2
+    },
+    {
+      "method": "UnregisterGatherings",
+      "parameters": [
+        {
+          "name": "lstGatherings",
+          "type": "std_list<uint32>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 3
+    },
+    {
+      "method": "UpdateGathering",
+      "parameters": [
+        {
+          "name": "anyGathering",
+          "type": "any<Gathering,string>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 4
+    },
+    {
+      "method": "Invite",
+      "parameters": [
+        {
+          "name": "idGathering",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "lstPrincipals",
+          "type": "std_list<uint32>",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strMessage",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 5
+    },
+    {
+      "method": "AcceptInvitation",
+      "parameters": [
+        {
+          "name": "idGathering",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strMessage",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 6
+    },
+    {
+      "method": "DeclineInvitation",
+      "parameters": [
+        {
+          "name": "idGathering",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strMessage",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 7
+    },
+    {
+      "method": "CancelInvitation",
+      "parameters": [
+        {
+          "name": "idGathering",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "lstPrincipals",
+          "type": "std_list<uint32>",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strMessage",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 8
+    },
+    {
+      "method": "GetInvitationsSent",
+      "parameters": [
+        {
+          "name": "idGathering",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "lstInvitations",
+          "type": "std_list<Invitation>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 9
+    },
+    {
+      "method": "GetInvitationsReceived",
+      "parameters": [],
+      "return": [
+        {
+          "name": "lstInvitations",
+          "type": "std_list<Invitation>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 10
+    },
+    {
+      "method": "Participate",
+      "parameters": [
+        {
+          "name": "idGathering",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strMessage",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 11
+    },
+    {
+      "method": "CancelParticipation",
+      "parameters": [
+        {
+          "name": "idGathering",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strMessage",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 12
+    },
+    {
+      "method": "GetParticipants",
+      "parameters": [
+        {
+          "name": "idGathering",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "lstParticipants",
+          "type": "std_list<uint32>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 13
+    },
+    {
+      "method": "AddParticipants",
+      "parameters": [
+        {
+          "name": "idGathering",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "lstParticipants",
+          "type": "std_list<uint32>",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strMessage",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 14
+    },
+    {
+      "method": "GetDetailedParticipants",
+      "parameters": [
+        {
+          "name": "idGathering",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "lstParticipants",
+          "type": "std_list<ParticipantDetails>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 15
+    },
+    {
+      "method": "GetParticipantsURLs",
+      "parameters": [
+        {
+          "name": "idGathering",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "lstStationURL",
+          "type": "std_list<stationurl>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 16
+    },
+    {
+      "method": "FindByType",
+      "parameters": [
+        {
+          "name": "strType",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "resultRange",
+          "type": "ResultRange",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "lstGathering",
+          "type": "std_list<any<Gathering,string>>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 17
+    },
+    {
+      "method": "FindByDescription",
+      "parameters": [
+        {
+          "name": "strDescription",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "resultRange",
+          "type": "ResultRange",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "lstGathering",
+          "type": "std_list<any<Gathering,string>>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 18
+    },
+    {
+      "method": "FindByDescriptionRegex",
+      "parameters": [
+        {
+          "name": "strDescriptionRegex",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "resultRange",
+          "type": "ResultRange",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "lstGathering",
+          "type": "std_list<any<Gathering,string>>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 19
+    },
+    {
+      "method": "FindByID",
+      "parameters": [
+        {
+          "name": "lstID",
+          "type": "std_list<uint32>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "lstGathering",
+          "type": "std_list<any<Gathering,string>>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 20
+    },
+    {
+      "method": "FindBySingleID",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "bResult",
+          "type": "bool",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "pGathering",
+          "type": "any<Gathering,string>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 21
+    },
+    {
+      "method": "FindByOwner",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "resultRange",
+          "type": "ResultRange",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "lstGathering",
+          "type": "std_list<any<Gathering,string>>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 22
+    },
+    {
+      "method": "FindByParticipants",
+      "parameters": [
+        {
+          "name": "pid",
+          "type": "std_list<uint32>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "lstGathering",
+          "type": "std_list<any<Gathering,string>>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 23
+    },
+    {
+      "method": "FindInvitations",
+      "parameters": [
+        {
+          "name": "resultRange",
+          "type": "ResultRange",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "lstGathering",
+          "type": "std_list<any<Gathering,string>>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 24
+    },
+    {
+      "method": "FindBySQLQuery",
+      "parameters": [
+        {
+          "name": "strQuery",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "resultRange",
+          "type": "ResultRange",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "lstGathering",
+          "type": "std_list<any<Gathering,string>>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 25
+    },
+    {
+      "method": "LaunchSession",
+      "parameters": [
+        {
+          "name": "idGathering",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strURL",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 26
+    },
+    {
+      "method": "UpdateSessionURL",
+      "parameters": [
+        {
+          "name": "idGathering",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "strURL",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 27
+    },
+    {
+      "method": "GetSessionURL",
+      "parameters": [
+        {
+          "name": "idGathering",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "strURL",
+          "type": "string",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 28
+    },
+    {
+      "method": "GetState",
+      "parameters": [
+        {
+          "name": "idGathering",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "uiState",
+          "type": "uint32",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 29
+    },
+    {
+      "method": "SetState",
+      "parameters": [
+        {
+          "name": "idGathering",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "uiNewState",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 30
+    },
+    {
+      "method": "ReportStats",
+      "parameters": [
+        {
+          "name": "idGathering",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "lstStats",
+          "type": "std_list<GatheringStats>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 31
+    },
+    {
+      "method": "GetStats",
+      "parameters": [
+        {
+          "name": "idGathering",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "lstParticipants",
+          "type": "std_list<uint32>",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "lstColumns",
+          "type": "std_list<byte>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "plstStats",
+          "type": "std_list<GatheringStats>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 32
+    },
+    {
+      "method": "DeleteGathering",
+      "parameters": [
+        {
+          "name": "gid",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 33
+    },
+    {
+      "method": "GetPendingDeletions",
+      "parameters": [
+        {
+          "name": "uiReason",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "resultRange",
+          "type": "ResultRange",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "lstDeletions",
+          "type": "std_list<DeletionEntry>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 34
+    },
+    {
+      "method": "DeleteFromDeletions",
+      "parameters": [
+        {
+          "name": "lstDeletions",
+          "type": "std_list<uint32>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 35
+    },
+    {
+      "method": "MigrateGatheringOwnership",
+      "parameters": [
+        {
+          "name": "gid",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "lstPotentialNewOwnersID",
+          "type": "std_list<uint32>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "bool",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 36
+    },
+    {
+      "method": "FindByDescriptionLike",
+      "parameters": [
+        {
+          "name": "strDescriptionLike",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "resultRange",
+          "type": "ResultRange",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "lstGathering",
+          "type": "std_list<any<Gathering,string>>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 37
+    },
+    {
+      "method": "RegisterLocalURL",
+      "parameters": [
+        {
+          "name": "gid",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "url",
+          "type": "string",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 38
+    },
+    {
+      "method": "RegisterLocalURLs",
+      "parameters": [
+        {
+          "name": "gid",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        },
+        {
+          "name": "lstUrls",
+          "type": "std_list<stationurl>",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 39
+    },
+    {
+      "method": "UpdateSessionHost",
+      "parameters": [
+        {
+          "name": "gid",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 40
+    },
+    {
+      "method": "GetSessionURLs",
+      "parameters": [
+        {
+          "name": "gid",
+          "type": "uint32",
+          "array": 1,
+          "direction": "in"
+        }
+      ],
+      "return": [
+        {
+          "name": "lstURLs",
+          "type": "std_list<stationurl>",
+          "array": 1,
+          "direction": "out"
+        },
+        {
+          "name": "%retval%",
+          "type": "qresult",
+          "array": 0,
+          "direction": "out"
+        }
+      ],
+      "method_id": 41
+    }
+  ],
+  "proto_id": 21
+}
