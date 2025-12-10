@@ -26,6 +26,15 @@ void mg::orbitclient::SavegameReader::Read(unsigned int requestId,
         numberOfBytes
     );
 
+    /*
+        !!! NOT IMPLEMENTED
+        in this part of code something should be readen, but i have no idea what exactly
+        maybe someone knows? uhuhuh....
+        game always call this but never calls savegame writer
+        and for some reason it even have its own saves implementation
+        
+        ubisoft devs are funny..
+    */
     std::ifstream file("uplay/save/savegame.dat", std::ios::binary);
     if (!file.is_open()) {
         SPDLOG_ERROR("Failed to open savegame.dat");
@@ -37,7 +46,7 @@ void mg::orbitclient::SavegameReader::Read(unsigned int requestId,
     unsigned int bytesRead = static_cast<unsigned int>(file.gcount());
     file.close();
 
-    SPDLOG_INFO("Read {} bytes from savegame.dat", bytesRead);
+    SPDLOG_INFO("Read {} bytes from savegame.dat", bytesRead); 
 
     if (savegameReadListenerCallBack && savegameReadListenerCallBack->CallBackPtr) {
         auto callback = *reinterpret_cast<ISavegameReadListener::CallBackPtrType*>(
