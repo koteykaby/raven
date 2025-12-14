@@ -2,6 +2,7 @@
 
 #include "managers/ClientManager.h"
 #include "managers/VPortManager.h"
+#include "managers/RMCManager.h"
 
 #include "handlers/RVSec.h"
 
@@ -41,10 +42,14 @@ Quazal::Server::Server(std::string serviceName, std::string ipAddress, uint16_t 
 
     this->serverSocket = udpSock;
 
+    auto rmcDispatcher = std::make_shared<Quazal::RMCDispatcher>(serviceName);
+
     // Register vport handlers
     vportManager.registerHandler(
-        { Quazal::StreamType::RVSec, 1 },
-        Quazal::RVSecHandler::handlePacket
+    { Quazal::StreamType::RVSec, 1 },
+        [rmcDispatcher](QPacket& packet, sockaddr_in& client, ClientManager& mgr, SOCKET& sock, std::any ctx) -> std::vector<uint8_t> {
+            return RVSecHandler::handlePacket(packet, client, mgr, sock, rmcDispatcher.get());
+        }
     );
 
     serve(serviceName, ipAddress, port);
@@ -112,7 +117,7 @@ void Quazal::Server::worker(SOCKET serverSocket)
 
         q.logPacket();
 
-        response = vportManager.handlePacket(q.destination, q, pkt.client, clientManager);
+        response = vportManager.handlePacket(q.destination, q, pkt.client, clientManager, serverSocket);
 
         auto hex = fmtToHex(response);
         SPDLOG_DEBUG("{}: Response packet to {}:{}: {}",

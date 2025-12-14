@@ -76,6 +76,7 @@ void Quazal::QPacket::logPacket()
 
 std::vector<uint8_t> Quazal::QPacket::serialize()
 {
+    logPacket();
     Stream wtr;
 
     // Write VPorts
@@ -83,6 +84,8 @@ std::vector<uint8_t> Quazal::QPacket::serialize()
     wtr.write(destination.to_byte());
 
     // Write packet type and flags
+    packetTypeFlags = makeTypeFlags(type, flags);
+
     wtr.write(packetTypeFlags);
 
     wtr.write(sessionId);
@@ -96,15 +99,20 @@ std::vector<uint8_t> Quazal::QPacket::serialize()
     }
     if (type == PacketType::DATA)
     {
-        wtr.write(fragmentId.value());
+        wtr.write<uint8_t>(fragmentId.value_or(0));
     }
     if (flags & PacketFlags::HAS_SIZE)
     {
-        wtr.write(payloadSize.value());
+        if (payload) {
+            payloadSize = payload->size();
+        } else {
+            payloadSize = 0;
+        }
+        wtr.write<uint16_t>(payloadSize.value_or(0));
     }
-    if (type == PacketType::DATA)
+    if (payload.has_value())
     {
-        wtr.write_vector(payload.value());
+        wtr.write_vector(*payload);
     }
 
     std::vector<uint8_t> pkt = wtr.get_data();
@@ -114,8 +122,6 @@ std::vector<uint8_t> Quazal::QPacket::serialize()
 
     // Write checksum as last byte
     wtr.write<uint8_t>(checksum);
-
-    logPacket();
 
     return wtr.get_data();
 }

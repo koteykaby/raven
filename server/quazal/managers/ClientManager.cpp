@@ -9,19 +9,20 @@ namespace Quazal {
     uint32_t ClientManager::createClient(const sockaddr_in& endpoint)
     {
         static std::mt19937 rng(std::random_device{}());
-        std::uniform_int_distribution<uint32_t> dist(0, UINT32_MAX);
+        std::uniform_int_distribution<uint32_t> dist32(0, UINT32_MAX);
+        std::uniform_int_distribution<int> dist8(0, 255);
 
         uint32_t connSignature;
 
         do {
-            connSignature = dist(rng);
+            connSignature = dist32(rng);
         } while (clientsMap.find(connSignature) != clientsMap.end());
 
         ClientInfo info{};
         info.endpoint = endpoint;
-        info.serverSequenceId = 0;
-        info.serverSignature = dist(rng);
-        info.serverSessionId = 0;
+        info.serverSequenceId = 0x0000;
+        info.serverSignature = dist32(rng);
+        info.serverSessionId = static_cast<uint8_t>(dist8(rng));
 
         clientsMap.emplace(connSignature, info);
 

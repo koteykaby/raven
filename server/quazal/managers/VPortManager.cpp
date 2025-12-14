@@ -2,6 +2,13 @@
 
 #include "spdlog/spdlog.h"
 
+#include <WinSock2.h>
+
+#include "VPortManager.h"
+#include "spdlog/spdlog.h"
+
+#include <WinSock2.h>
+
 void Quazal::VPortManager::registerHandler(const VirtualPort& vport, VPortHandler handler) {
     std::lock_guard<std::mutex> lock(mutex);
     portHandlers[vport] = handler;
@@ -11,10 +18,12 @@ std::vector<uint8_t> Quazal::VPortManager::handlePacket(
     const VirtualPort& vp,
     QPacket& packet,
     sockaddr_in& client,
-    ClientManager& mgr
+    ClientManager& mgr, 
+    SOCKET& serverSocket,
+    std::any ctx
 )
 {
-    std::lock_guard lk(mutex);
+    std::lock_guard<std::mutex> lock(mutex);
 
     auto it = portHandlers.find(vp);
     if (it == portHandlers.end()) {
@@ -24,5 +33,6 @@ std::vector<uint8_t> Quazal::VPortManager::handlePacket(
 
     SPDLOG_DEBUG("Found handler for port {}:{}", static_cast<int>(vp.type), vp.port);
 
-    return it->second(packet, client, mgr);
+    // Вызов обработчика с контекстом
+    return it->second(packet, client, mgr, serverSocket, ctx);
 }

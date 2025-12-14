@@ -8,9 +8,13 @@ namespace Quazal {
     struct ClientInfo {
         sockaddr_in endpoint;
 
-        uint16_t serverSequenceId = 0;
-        uint32_t serverSignature = 0xfb261505;
-        uint8_t serverSessionId = 0xab;
+        uint16_t serverSequenceId;
+        uint32_t serverSignature;
+        uint8_t serverSessionId;
+
+        uint16_t clientSequenceId;
+        uint32_t clientSignature;
+        uint8_t clientSessionId;
     };
 
     class ClientManager {
